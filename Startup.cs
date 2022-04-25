@@ -27,7 +27,8 @@ namespace test1
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
-        {
+        { 
+            //MVC architecture is added as services
             services.AddControllersWithViews();
         }
 
@@ -54,6 +55,12 @@ namespace test1
 
             app.UseEndpoints(endpoints =>
             {
+                /*
+                 * Controllers are like classes
+                 * Actions are like methods
+                 * endpoint : URL
+                 * When requested Home controller / Index Action is brought back
+                 */
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
